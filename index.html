@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <link href="./favicon.ico" rel="shortcut icon" />
     <title>Juan Garcia | Portfolio</title>
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
     />
     <link
-      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <link href="./css/main.min.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -32,10 +32,11 @@
     <div class="hero">
       <div class="container">
         <div class="hero__content">
-          <h1 class="hero__header"
-            >Making <span class="hero__header-highlight">Designs</span> Come To
-            Life</h1
-          >
+          <h1 class="hero__header">
+            Making
+            <span class="hero__header-highlight">Designs</span>
+            Come To Life
+          </h1>
           <h2 class="hero__sub-header">Front End Web Developer</h2>
         </div>
       </div>
@@ -45,7 +46,7 @@
     </div>
 
     <section id="mid-section">
-      <img src="./images/dots.svg" alt="" />
+      <img alt="" src="./images/dots.svg" />
     </section>
 
     <section class="projects-section" id="projects">
@@ -55,16 +56,89 @@
             class="project"
             data-video="https://www.youtube.com/embed/p033nj2Ajqc?autoplay=1&controls=0&amp;start=3"
           >
+            <div class="project__thumbnail">
+              <img alt="PublicRecord.com" src="./images/publicrecord.png" />
+            </div>
+            <figcaption class="project__content">
+              <div class="project__content-wrapper">
+                <h2 class="project__title">PublicRecord.com</h2>
+                <p class="project__description">
+                  PublicRecord.com offers fast, safe, and comprehensive people
+                  search lookups. With just their name, you can find everything
+                  you need to know about someone.<br /><br />
+                  <a href="https://publicrecord.com/" target="_blank">
+                    View Live Site
+                  </a>
+                </p>
+                <ul class="project__skills-list">
+                  <li class="project__skill">Vue.js</li>
+                  <li class="project__skill">Nuxt</li>
+                  <li class="project__skill">SCSS</li>
+                </ul>
+                <a
+                  class="project__link"
+                  href="https://github.com/Juan-Garcia1/maros-auto-sales"
+                  target="_blank"
+                  title="view code"
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure
+            class="project"
+            data-video="https://www.youtube.com/embed/p033nj2Ajqc?autoplay=1&controls=0&amp;start=3"
+          >
+            <div class="project__thumbnail">
+              <img alt="US PeopleSearch" src="./images/us-peoplesearch.png" />
+            </div>
+            <figcaption class="project__content">
+              <div class="project__content-wrapper">
+                <h2 class="project__title">USPeopleSearch.com</h2>
+                <p class="project__description">
+                  US People Search's reverse lookups tell you everything you
+                  need to know about anyone. From staying safe online to finding
+                  old friends, we're here to help.<br /><br />
+                  <a href="https://uspeoplesearch.com/" target="_blank">
+                    View Live Site
+                  </a>
+                </p>
+                <ul class="project__skills-list">
+                  <li class="project__skill">Vue.js</li>
+                  <li class="project__skill">Nuxt</li>
+                  <li class="project__skill">SCSS</li>
+                </ul>
+                <a
+                  class="project__link"
+                  href="https://github.com/Juan-Garcia1/maros-auto-sales"
+                  target="_blank"
+                  title="view code"
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
+              </div>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure
+            class="project"
+            data-video="https://www.youtube.com/embed/p033nj2Ajqc?autoplay=1&controls=0&amp;start=3"
+          >
             <div class="project__thumbnail"
-              ><img src="./images/marosautosales.jpg" alt="maro's auto sales" />
-              <button class="project__play-btn js-play-btn"
-                ><img src="./images/play-btn.svg" alt="play button"
-              /></button>
+              ><img alt="maro's auto sales" src="./images/marosautosales.jpg" />
+              <button class="project__play-btn js-play-btn" title="Watch Demo">
+                <img alt="play button" src="./images/play-btn.svg" />
+              </button>
             </div>
             <figcaption class="project__content">
               <div class="project__content-wrapper">
                 <h2 class="project__title">Maro's Auto Sales Dealership</h2>
-                <p class="project__role">Full-Stack Developer</p>
                 <p class="project__description">
                   After opening a second location, Maro’s Auto Sales was in need
                   of a complete overhaul to their site. Users can easily browse
@@ -78,12 +152,13 @@
                   <li class="project__skill">BootStrap</li>
                 </ul>
                 <a
+                  class="project__link"
                   href="https://github.com/Juan-Garcia1/maros-auto-sales"
                   target="_blank"
                   title="view code"
-                  class="project__link"
-                  ><i class="fa fa-github project__link-icon"></i
-                ></a>
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
               </div>
             </figcaption>
           </figure>
@@ -95,15 +170,14 @@
             data-video="https://www.youtube.com/embed/c-L9LiJN16I?autoplay=1&controls=0"
           >
             <div class="project__thumbnail">
-              <img src="./images/rosa/restaurant.png" alt="the rosa" />
-              <button class="project__play-btn js-play-btn"
-                ><img src="./images/play-btn.svg" alt="play button"
-              /></button>
+              <img alt="the rosa" src="./images/rosa/restaurant.png" />
+              <button class="project__play-btn js-play-btn" title="Watch Demo">
+                <img alt="play button" src="./images/play-btn.svg" />
+              </button>
             </div>
             <figcaption class="project__content">
               <div class="project__content-wrapper">
                 <h2 class="project__title">Larascape</h2>
-                <p class="project__role">Full-Stack Developer</p>
                 <p class="project__description">
                   A full-stack application where you can login as an
                   administrator to maintain the restaurant's menu by creating,
@@ -115,12 +189,13 @@
                   <li class="project__skill">GSAP</li>
                 </ul>
                 <a
+                  class="project__link"
                   href="https://github.com/Juan-Garcia1/larascape"
                   target="_blank"
                   title="view code"
-                  class="project__link"
-                  ><i class="fa fa-github project__link-icon"></i
-                ></a>
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
               </div>
             </figcaption>
           </figure>
@@ -153,15 +228,14 @@
             data-video="https://www.youtube.com/embed/8eCxvgpoNeQ?autoplay=1&controls=0"
           >
             <div class="project__thumbnail">
-              <img src="./images/gqlmdb/gqlmdb.png" alt="gqlmdb" />
-              <button class="project__play-btn js-play-btn">
-                <img src="./images/play-btn.svg" alt="play button" />
+              <img alt="gqlmdb" src="./images/gqlmdb/gqlmdb.png" />
+              <button class="project__play-btn js-play-btn" title="Watch Demo">
+                <img alt="play button" src="./images/play-btn.svg" />
               </button>
             </div>
             <figcaption class="project__content">
               <div class="project__content-wrapper">
                 <h2 class="project__title">GQLMDb</h2>
-                <p class="project__role">React Developer</p>
                 <p class="project__description">
                   GQLMDb is a single page application using The Movie DB api.
                   Users can browse their favorite movies, see what's playing in
@@ -173,12 +247,13 @@
                   <li class="project__skill">GraphQL</li>
                 </ul>
                 <a
+                  class="project__link"
                   href="https://github.com/Juan-Garcia1/graphqlmdb"
                   target="_blank"
                   title="view code"
-                  class="project__link"
-                  ><i class="fa fa-github project__link-icon"></i
-                ></a>
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
               </div>
             </figcaption>
           </figure>
@@ -186,18 +261,17 @@
         <li>
           <figure class="project">
             <div class="project__thumbnail">
-              <img src="./images/trello/trello-clone.png" alt="Trello clone" />
+              <img alt="Trello clone" src="./images/trello/trello-clone.png" />
               <a
                 class="project__play-btn"
                 href="https://chingu-voyage7.github.io/Geckos-Team-14/"
                 target="_blank"
-                ><img src="./images/play-btn.svg" alt="play button"
+                ><img alt="play button" src="./images/play-btn.svg"
               /></a>
             </div>
             <figcaption class="project__content">
               <div class="project__content-wrapper">
                 <h2 class="project__title">Trello Clone</h2>
-                <p class="project__role">React Developer</p>
                 <p class="project__description">
                   A clone of the popular project management app. Users can
                   create cards for their tasks & organize these into
@@ -210,11 +284,12 @@
                   <li class="project__skill">SCSS</li>
                 </ul>
                 <a
+                  class="project__link"
                   href="https://github.com/chingu-voyage7/Geckos-Team-14/tree/master/src"
                   target="_blank"
-                  class="project__link"
-                  ><i class="fa fa-github project__link-icon"></i
-                ></a>
+                >
+                  <i class="fa fa-github project__link-icon"></i>
+                </a>
               </div>
             </figcaption>
           </figure>
@@ -592,27 +667,33 @@
     <footer>
       <div class="container">
         <ul class="social-list">
-          <li class="social"
-            ><a
-              href="https://codepen.io/-J0hn-"
-              target="_blank"
+          <li class="social">
+            <a
               class="social__link"
-              ><i class="fa fa-codepen social__icon"></i></a
-          ></li>
-          <li class="social"
-            ><a
+              href="https://codepen.io/juan-frontdev/pens/popular"
+              target="_blank"
+            >
+              <i class="fa fa-codepen social__icon"></i>
+            </a>
+          </li>
+          <li class="social">
+            <a
+              class="social__link"
               href="https://github.com/Juan-Garcia1"
               target="_blank"
+            >
+              <i class="fa fa-github social__icon"></i>
+            </a>
+          </li>
+          <li class="social">
+            <a
               class="social__link"
-              ><i class="fa fa-github social__icon"></i></a
-          ></li>
-          <li class="social"
-            ><a
               href="https://www.linkedin.com/in/juan-garcia1/"
               target="_blank"
-              class="social__link"
-              ><i class="fa fa-linkedin social__icon"></i></a
-          ></li>
+            >
+              <i class="fa fa-linkedin social__icon"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </footer>
@@ -621,9 +702,9 @@
       <div class="container">
         <div class="modal__wrapper">
           <button class="modal__close-btn">
-            <img src="./images/close-btn.svg" alt="" />
+            <img alt="" src="./images/close-btn.svg" />
           </button>
-          <div class="modal__content"> </div>
+          <div class="modal__content"></div>
         </div>
       </div>
     </div>

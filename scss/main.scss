@@ -152,6 +152,12 @@ body {
   row-gap: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
+  a {
+    color: #33f9f9;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &__thumbnail {
     position: relative;
     img {
