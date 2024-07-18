@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
-    document.querySelector(".loader").classList.add("finished-loading");
-    document.querySelector("body").style.overflow = "auto";
-
     const modal = document.querySelector(".modal");
     const closeModalBtn = document.querySelector(".modal__close-btn");
     const playBtns = document.querySelectorAll(".js-play-btn");
@@ -50,4 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.classList.toggle("modal--active");
     }
   });
+
+  let wipeAnimation = new TimelineMax({
+    onStart: function () {
+      document.querySelector("body").style.overflowY = "hidden";
+    },
+    onComplete: function () {
+      document.querySelector("body").style.overflowY = "auto";
+    },
+  });
+
+  wipeAnimation
+    .fromTo(
+      ".panel-1",
+      1.5,
+      { x: "-100%" },
+      { x: "100%", ease: Linear.easeNone }
+    )
+    .fromTo(
+      ".panel-2",
+      1.5,
+      { x: "-100%" },
+      { x: "100%", ease: Linear.easeNone },
+      "-=0.9"
+    )
+    .fromTo(
+      [".hero", ".projects-section", "#mid-section"],
+      1.5,
+      {
+        opacity: 0,
+      },
+      { opacity: 1 }
+    );
 });

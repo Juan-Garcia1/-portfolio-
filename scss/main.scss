@@ -33,41 +33,12 @@ body {
   background: url("../images/hero-bg-sm.svg") no-repeat top right,
     linear-gradient(94.59deg, #151515 7.26%, #2c3535 99.74%);
   font-family: $primary-font;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .container {
   width: 80%;
   margin: auto;
-}
-
-.loader {
-  position: fixed;
-  background: linear-gradient(94.59deg, #151515 7.26%, #2c3535 99.74%);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  .spinner {
-    width: 60px;
-    height: 60px;
-    margin: auto;
-    border: solid 5px transparent;
-    border-top-color: #33f9f9;
-    border-right-color: #33f9f9;
-    border-radius: 50%;
-    animation: rotateIcon 1s linear infinite;
-  }
-}
-.finished-loading {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .hero {
@@ -76,6 +47,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+  opacity: 0;
   &__content {
     width: 320px;
   }
@@ -282,6 +254,21 @@ body {
 
 .js-play-btn {
   cursor: pointer;
+}
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.panel-1 {
+  background: #33f9f9;
+}
+.panel-2 {
+  background: #fff;
 }
 
 @media screen and (min-width: 768px) {
