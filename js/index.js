@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "-=0.9"
     )
     .fromTo(
-      [".hero", ".projects-section", "#mid-section"],
+      [".hero", ".projects-section", "#mid-section", ".social-list"],
       1.5,
       {
         opacity: 0,
