@@ -1,82 +1,95 @@
 document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("load", function () {
-    const modal = document.querySelector(".modal");
-    const closeModalBtn = document.querySelector(".modal__close-btn");
-    const playBtns = document.querySelectorAll(".js-play-btn");
-    let iframe = document.createElement("iframe");
-    let isModelOpen = false;
+  gsap.registerPlugin(ScrollTrigger);
+  const modal = document.querySelector(".modal");
+  const closeModalBtn = document.querySelector(".modal__close-btn");
+  const playBtns = document.querySelectorAll(".js-play-btn");
+  let iframe = document.createElement("iframe");
+  let isModelOpen = false;
 
-    [...playBtns].forEach((playBtn) => {
-      playBtn.addEventListener("click", function () {
-        isModelOpen = true;
-        toggleModal();
-        // prevent page from scrolling when modal is open
-        document.querySelector("body").style.overflow = "hidden";
-        // get youtube link
-        const video = this.closest(".project").dataset.video;
+  // Animations
+  let tl = gsap.timeline();
 
-        iframe.src = video;
-        addIframeAtrributes();
-        modal.querySelector(".modal__content").append(iframe);
-      });
+  tl.to(".dot", { scale: 1 })
+    .to(".blob", { scale: 1 })
+    .from(".text", { opacity: 0, scale: 100, stagger: 0.2 })
+    .from(".social-list--hero", { opacity: 0 })
+    .set(".hero", {
+      backgroundColor: "#2c3535",
     });
 
-    closeModalBtn.addEventListener("click", function () {
+  const details = gsap.utils.toArray(".projects-list__item:not(:first-child)");
+  console.log(details);
+
+  const photos = gsap.utils.toArray(".desktop-photo:not(:first-child)");
+  gsap.set(photos, { yPercent: 101 });
+  const allPhotos = gsap.utils.toArray(".desktop-photo");
+
+  ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function () {
+      ScrollTrigger.create({
+        trigger: ".projects-section",
+        start: "top 10%",
+        end: "bottom 80%",
+        pin: ".desktop-photos",
+        markers: false,
+      });
+
+      details.forEach((detail, index) => {
+        let headline = detail.querySelector("h2");
+        let animation = gsap
+          .timeline()
+          .to(photos[index], { yPercent: 0 })
+          .set(allPhotos[index], { autoAlpha: 0 });
+        ScrollTrigger.create({
+          trigger: headline,
+          start: "top 50%",
+          end: "top 30%",
+          animation: animation,
+          scrub: true,
+          markers: false,
+        });
+      });
+    },
+  });
+
+  [...playBtns].forEach((playBtn) => {
+    playBtn.addEventListener("click", function () {
+      isModelOpen = true;
+      toggleModal();
+      // prevent page from scrolling when modal is open
+      document.querySelector("body").style.overflow = "hidden";
+      // get youtube link
+      const video = this.closest(".project").dataset.video;
+
+      iframe.src = video;
+      addIframeAtrributes();
+      modal.querySelector(".modal__content").append(iframe);
+    });
+  });
+
+  closeModalBtn.addEventListener("click", function () {
+    toggleModal();
+    document.querySelector("body").style.overflow = "scroll";
+    iframe.src = "";
+  });
+
+  // when modal is open, esc key will close the modal
+  window.addEventListener("keydown", function (event) {
+    if (isModelOpen && event.which === 27) {
       toggleModal();
       document.querySelector("body").style.overflow = "scroll";
-      iframe.src = "";
-    });
-
-    // when modal is open, esc key will close the modal
-    window.addEventListener("keydown", function (event) {
-      if (isModelOpen && event.which === 27) {
-        toggleModal();
-        document.querySelector("body").style.overflow = "scroll";
-        isModelOpen = false;
-      }
-    });
-
-    function addIframeAtrributes() {
-      iframe.width = "100%";
-      iframe.height = "100%";
-      iframe.frameBorder = 0;
-      iframe.allowFullscreen = true;
-      iframe.allow = "autoplay; picture-in-picture";
-    }
-    function toggleModal() {
-      modal.classList.toggle("modal--active");
+      isModelOpen = false;
     }
   });
 
-  let wipeAnimation = new TimelineMax({
-    onStart: function () {
-      document.querySelector("body").style.overflowY = "hidden";
-    },
-    onComplete: function () {
-      document.querySelector("body").style.overflowY = "auto";
-    },
-  });
-
-  wipeAnimation
-    .fromTo(
-      ".panel-1",
-      1.5,
-      { x: "-100%" },
-      { x: "100%", ease: Linear.easeNone }
-    )
-    .fromTo(
-      ".panel-2",
-      1.5,
-      { x: "-100%" },
-      { x: "100%", ease: Linear.easeNone },
-      "-=0.9"
-    )
-    .fromTo(
-      [".hero", ".projects-section", "#mid-section", ".social-list"],
-      1.5,
-      {
-        opacity: 0,
-      },
-      { opacity: 1 }
-    );
+  function addIframeAtrributes() {
+    iframe.width = "100%";
+    iframe.height = "100%";
+    iframe.frameBorder = 0;
+    iframe.allowFullscreen = true;
+    iframe.allow = "autoplay; picture-in-picture";
+  }
+  function toggleModal() {
+    modal.classList.toggle("modal--active");
+  }
 });
