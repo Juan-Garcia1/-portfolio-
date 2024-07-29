@@ -18,8 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   const details = gsap.utils.toArray(".projects-list__item:not(:first-child)");
-  console.log(details);
-
   const photos = gsap.utils.toArray(".desktop-photo:not(:first-child)");
   gsap.set(photos, { yPercent: 101 });
   const allPhotos = gsap.utils.toArray(".desktop-photo");
