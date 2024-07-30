@@ -36,7 +36,8 @@ body {
 }
 
 .container {
-  width: 80%;
+  max-width: 1170px;
+  width: 100%;
   margin: auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -140,9 +141,6 @@ body {
 }
 
 .projects-section {
-  padding: 10% 5%;
-  padding-left: 0;
-  padding-right: 0;
   > ul {
     display: grid;
     row-gap: 30px;
@@ -155,11 +153,11 @@ body {
   row-gap: 20px;
   margin-bottom: 20px;
   &__cta {
+    display: none;
     background: none;
     border: 0;
     color: #33f9f9;
     align-self: flex-start;
-    display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 30px;
@@ -213,6 +211,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__skills-list {
     display: inline-flex;
@@ -306,7 +305,7 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   html {
     font-size: 21px;
   }
@@ -324,9 +323,6 @@ body {
   }
 
   .projects-section {
-    padding: 2% 8%;
-    padding-left: 0;
-    padding-right: 0;
     ul {
       grid-template-columns: 1fr;
       gap: 10px;
@@ -341,7 +337,7 @@ body {
     height: 450px;
   }
 }
-@media screen and (min-width: 992px) {
+@media (min-width: 992px) {
   .projects-section {
     padding-top: 80px;
     padding-bottom: 100px;
@@ -350,6 +346,9 @@ body {
     column-gap: 40px;
   }
   .project {
+    &__cta {
+      display: flex;
+    }
     &__thumbnail {
       display: none;
     }
@@ -369,7 +368,7 @@ body {
     object-fit: cover;
   }
 }
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero {
     &__social-links {
       position: fixed;
@@ -425,7 +424,7 @@ body {
   }
 }
 
-@media screen and(min-width:2560px) {
+@media (min-width:2560px) {
   html {
     font-size: 35px;
   }
