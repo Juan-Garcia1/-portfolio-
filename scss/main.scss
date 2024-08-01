@@ -164,11 +164,9 @@ body {
     &:after {
       content: "\003E";
     }
-  }
-  a {
-    color: #33f9f9;
     &:hover {
-      text-decoration: underline;
+      color: #fff;
+      text-decoration: none;
     }
   }
   &__thumbnail {
