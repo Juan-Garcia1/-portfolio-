@@ -5,18 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const playBtns = document.querySelectorAll(".js-play-btn");
   let iframe = document.createElement("iframe");
   let isModelOpen = false;
-
-  // Animations
-  let tl = gsap.timeline();
-
-  tl.to(".dot", { scale: 1 })
-    .to(".blob", { scale: 1 })
-    .from(".text", { opacity: 0, scale: 100, stagger: 0.2 })
-    .from(".social-list--hero", { opacity: 0 })
-    .set(".hero", {
-      backgroundColor: "#2c3535",
-    });
-
   const details = gsap.utils.toArray(".projects-list__item:not(:first-child)");
   const photos = gsap.utils.toArray(".desktop-photo:not(:first-child)");
   gsap.set(photos, { yPercent: 101 });
