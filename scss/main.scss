@@ -236,13 +236,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 15px;
   &--hero {
     justify-content: unset;
+    margin-top: 15px;
   }
 }
 
 .social {
-  margin: 0 10px;
+  margin: 0;
   &__link {
     color: #33f9f9;
     padding: 10px;
