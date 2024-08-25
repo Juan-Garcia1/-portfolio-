@@ -162,6 +162,11 @@ body {
       text-decoration: none;
     }
   }
+  &--show-cta {
+    .project__cta {
+      display: flex;
+    }
+  }
   &__thumbnail {
     position: relative;
     img {
@@ -206,7 +211,9 @@ body {
   }
   &__skills-list {
     display: inline-flex;
+    flex-wrap: wrap;
     margin-bottom: 10px;
+    row-gap: 10px;
   }
   &__skill {
     background: #0b42e5;
