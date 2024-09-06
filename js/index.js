@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     iframe.frameBorder = 0;
     iframe.allowFullscreen = true;
     iframe.allow = "autoplay; picture-in-picture";
+    iframe.loading = "lazy";
   }
   function toggleModal() {
     modal.classList.toggle("modal--active");

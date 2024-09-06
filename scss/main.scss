@@ -155,7 +155,7 @@ body {
     gap: 10px;
     margin-bottom: 30px;
     &:after {
-      content: "\003E";
+      content: "\279D";
     }
     &:hover {
       color: #fff;
@@ -293,7 +293,7 @@ body {
     column-gap: 8px;
     transition: background-color .15s linear;
     &:after {
-      content: "\003E";
+      content: "\279D";
     }
     &:hover,&:focus {
       background-color: darken($color: #0b42e5, $amount: 10);
